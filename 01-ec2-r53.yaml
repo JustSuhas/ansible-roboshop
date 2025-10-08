@@ -6,7 +6,7 @@
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0963e90cab750e062
     zone_id: Z074103617C8UL7HYK2G5
-    domain_name: pracdevops.store
+    domain_name: "pracdevops.store"
     instances:
     - mongodb
   
