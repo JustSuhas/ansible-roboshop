@@ -20,7 +20,7 @@
       comment: system user
       system: true
       home: /app
-      shell: /sbin/login
+      shell: /sbin/nologin
   
   - name: create app directory
     ansible.builtin.file:
@@ -58,7 +58,7 @@
       state: present
   
   - name: connect to mongodb catalogue
-    ansible.builtin.command: mongosh mongodb.pracdevops.store --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')
+    ansible.builtin.command: mongosh mongodb.pracdevops.store --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
     register: catalogue_output
   
   - name: load products to mongodb catalogue
