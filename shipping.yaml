@@ -10,6 +10,15 @@
     loop:
     - maven
     - mysql
+
+  - name: installing python lib
+    ansible.builtin.pip:
+      executable: pip3.9
+      name: "{{ item }}"
+
+    loop:
+    - PyMySQL
+    - cryptography
   
   - name: creating system user
     ansible.builtin.user:
@@ -31,7 +40,7 @@
 
   - name: unarchiving the file
     ansible.builtin.unarchive:
-      src: tmp/shipping.zip
+      src: /tmp/shipping.zip
       dest: /app
   
   - name: downloading dependencies
