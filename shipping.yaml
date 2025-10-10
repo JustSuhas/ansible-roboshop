@@ -42,6 +42,7 @@
     ansible.builtin.unarchive:
       src: /tmp/shipping.zip
       dest: /app
+      remote_src: yes
   
   - name: downloading dependencies
     ansible.builtin.command: mvn clean package
